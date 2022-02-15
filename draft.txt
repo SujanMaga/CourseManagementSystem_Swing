@@ -1,0 +1,68 @@
+CREATE DATABASE cms;
+
+
+CREATE TABLE modules (
+id int default null,
+module1 varchar(100),
+module2 varchar(100),
+module3 varchar(100),
+module4 varchar(100),
+module5 varchar(100),
+module6 varchar(100),
+course varchar(100),
+optional1 varchar(100),
+optional2 varchar(100),
+year varchar(100)
+);
+
+CREATE TABLE marks (
+id int AUTO_INCREMENT PRIMARY KEY,
+mark1 varchar(100),
+mark2 varchar(100),
+mark3 varchar(100),
+mark4 varchar(100),
+mark5 varchar(100),
+mark6 varchar(100),
+);
+
+CREATE TABLE instructor (
+id int AUTO_INCREMENT PRIMARY KEY,
+pw varchar(100),
+name varchar(100),
+address varchar(100), 
+course varchar(100), 
+phone varchar(100), 
+email varchar(100), 
+dob date,
+section1 varchar(100),
+section2 varchar(100),
+section3 varchar(100),
+section4 varchar(100),
+section5 varchar(100),
+section6 varchar(100)
+);
+
+CREATE TABLE student (
+id int AUTO_INCREMENT PRIMARY KEY,
+pw varchar(100),
+name varchar(100),
+address varchar(100),
+gpa_neb varchar(100), 
+course varchar(100), 
+phone varchar(100), 
+email varchar(100), 
+dob date,
+section varchar(100),
+);
+
+
+CREATE TABLE admin (
+id int,
+pw varchar(100));
+INSERT INTO admin VALUES (1,"admin");
+
+
+//reset number of id from 1
+SET @num :=0;
+UPDATE instructor SET id = @num := (@num+1);
+ALTER TABLE instructor AUTO_INCREMENT = 1;
